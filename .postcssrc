@@ -1,0 +1,9 @@
+{
+  "plugins": {
+    "postcss-nested": {},
+    "tailwindcss": {},
+    "postcss-rem-to-pixel": {
+      "rootValue": 16
+    }
+  }
+}

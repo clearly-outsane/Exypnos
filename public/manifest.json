@@ -1,0 +1,22 @@
+{
+  "short_name": "exypnos",
+  "name": "Exypnos",
+  "description": "The only tab manager you'll ever need.",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["dist/index.4eeece91.css"],
+      "js": ["dist/index.6099912e.js"]
+    }
+  ],
+  "permissions": ["storage", "scripting", "tabs"],
+  "icons": {
+    "128": "images/icon-128.png",
+    "48": "images/icon-48.png"
+  }
+}

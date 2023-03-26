@@ -1,0 +1,36 @@
+{
+  "name": "exypnos",
+  "version": "0.0.1",
+  "private": true,
+  "source": "./src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "prestart": "yarn style",
+    "start": "parcel --dist-dir ./public/dist",
+    "prebuild": "yarn style && rm -rf ./public/dist",
+    "build": "parcel build --dist-dir ./public/dist --no-content-hash",
+    "style": "npx tailwindcss -i ./src/input.css -o ./src/tailwindcss-output.css",
+    "style:watch": "yarn style -- --watch"
+  },
+  "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.0.3",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^1.10.0"
+  },
+  "devDependencies": {
+    "@react-types/button": "^3.7.1",
+    "@types/chrome": "^0.0.225",
+    "@types/react": "^18.0.19",
+    "@types/react-dom": "^18.0.6",
+    "parcel": "latest",
+    "postcss": "^8.4.21",
+    "postcss-nested": "^5.0.6",
+    "postcss-rem-to-pixel": "^4.1.2",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.3"
+  }
+}
