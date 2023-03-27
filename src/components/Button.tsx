@@ -24,17 +24,17 @@ const Button = forwardRef<HTMLButtonElement, Props>((props: Props) => {
   const classNamesFromSize = (size: string) => {
     switch (size) {
       case 'xs':
-        return 'text-xs !px-2 !py-1 rounded-sm';
+        return 'text-xs px-2 py-1 rounded-sm';
       case 'sm':
-        return 'text-sm !px-3 !py-2';
+        return 'text-sm px-3 py-2';
       case 'lg':
-        return 'text-lg !px-5 !py-4';
+        return 'text-lg px-5 py-4';
       case 'xl':
-        return 'text-xl !px-6 !py-5';
+        return 'text-xl px-6 py-5';
       case 'md':
       // fallthrough
       default:
-        return 'text-base !px-4 !py-3';
+        return 'text-base px-4 py-3';
     }
   };
 

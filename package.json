@@ -13,6 +13,7 @@
     "style:watch": "npm run style -- --watch"
   },
   "dependencies": {
+    "@radix-ui/react-context-menu": "^2.1.3",
     "@radix-ui/react-scroll-area": "^1.0.3",
     "clsx": "^1.2.1",
     "react": "^18.2.0",

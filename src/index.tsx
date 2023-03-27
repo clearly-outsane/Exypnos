@@ -65,11 +65,10 @@ async function init() {
   const app = document.createElement('div');
   app.id = 'exypnos-app';
 
-  app.style.setProperty('left', `${-SIDEBAR_WIDTH}px`); //hide it initially
+  app.style.setProperty('left', `${-SIDEBAR_WIDTH}px`, 'important'); //hide it initially
   app.style.setProperty('position', 'fixed');
   app.style.setProperty('top', '0px');
   app.style.setProperty('bottom', '0px');
-  app.style.setProperty('left', '0px');
   app.style.setProperty('height', '100vh');
   app.style.setProperty('transition-timing-function', 'ease-in-out');
   app.style.setProperty('transition-duration', '300ms');
