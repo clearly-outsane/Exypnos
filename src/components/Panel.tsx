@@ -25,7 +25,7 @@ export default function Panel({ initialEnabled, tabs }: { initialEnabled: boolea
       <div className="h-12 w-full rounded-md mt-4 px-4 mb-6 inline-flex items-center [text-rendering:geometricprecision]">
         <label className="h-full w-full relative inline-flex items-center align-middle flex-1 bg-[rgba(255,255,255,0.1)] rounded-md px-4">
           <span>
-            <Search className="w-4 h-4" />
+            <Search className="w-4 h-4 text-gray-200" />
           </span>
           <input className="px-3 py-3 text-sm outline-none border-none w-full h-full appearance-none min-w-0 bg-transparent" />
         </label>
@@ -120,10 +120,10 @@ export default function Panel({ initialEnabled, tabs }: { initialEnabled: boolea
         <ScrollArea.Corner className="bg-blackA8" />
       </ScrollArea.Root>
       <div className="p-4 flex items-center justify-between w-full">
-        <Button size="sm" className="px-0">
+        <Button size="sm" className="px-0 text-gray-200">
           Log in
         </Button>
-        <Button className="p-0">
+        <Button className="p-0 text-gray-200">
           <EllipsisVertical />
         </Button>
       </div>
