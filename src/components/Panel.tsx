@@ -109,6 +109,7 @@ export default function Panel({ initialEnabled, tabs }: { initialEnabled: boolea
               })}
           </div>
         </ScrollArea.Viewport>
+        {/* Hide the scrollbar since it seems to interfere with the context menu */}
         <ScrollArea.Scrollbar
           className="flex sm:hidden select-none touch-none p-0.5 bg-blackA6 transition-colors duration-[160ms] ease-out hover:bg-blackA8 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
           orientation="vertical"
