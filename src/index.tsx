@@ -95,7 +95,7 @@ async function init() {
     isMouseOverSidebar = false;
   });
 
-  const activationAreaWidth = 48;
+  const activationAreaWidth = 24;
   window.addEventListener('mousemove', (event) => {
     if (event.pageX < activationAreaWidth) {
       app.style.setProperty('left', '0px', 'important');

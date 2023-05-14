@@ -14,9 +14,17 @@
       "js": ["dist/index.6099912e.js"]
     }
   ],
-  "permissions": ["storage", "scripting", "tabs"],
+  "permissions": ["storage", "scripting", "tabs", "identity"],
   "icons": {
     "128": "images/icon-128.png",
     "48": "images/icon-48.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh+dAR9VDswz6iNhfKxKL6pSoipRWrbgpHsCRrnOl3+dPwgwDEjTxQS0mFo6lhFNfYQg+LbFNSC+N3g1mQpAbZapiT943kP5g6yLJ6OfSi85cGomCulwwEgJmo22YuzpdZc45UXjso5f84k2vqLrfBLiOiMJ7QQ+UAu0CkGaYhc6tC54uPWezXjRhh48Oij1xDiVc73ybZQik7h0M4MbtiiAWWBSg8OK/psoU+ZGz+SXMhbphyGtQXbL2UeOdMolNkiNVdD4wnizo/uGuiyzZV/IuBa1i3R7RVQq6o7WQPj7IrR5ULkRS4ATPAZi8XwztbYEXazXOv8qnEuVc6IqYQQIDAQAB",
+  "oauth2": {
+    "client_id": "277756892625-jf77e7f654stlf50gr1p28u9qt9duu6g.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/userinfo.email"]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline';"
   }
 }

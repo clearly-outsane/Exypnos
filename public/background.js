@@ -15,5 +15,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     chrome.tabs.update(id, rest);
     bringWindowToFocus && chrome.windows.update(windowId, { focused: true });
   }
+  if (api === 'firebase' && type === 'login') {
+    const { auth, GoogleAuthProvider, signInWithCredential } = payload;
+    chrome.identity.getAuthToken({ interactive: true }, function (token) {
+      var credential = GoogleAuthProvider.credential(null, token);
+      signInWithCredential(auth, credential);
+      console.log(token);
+    });
+  }
   return true;
 });

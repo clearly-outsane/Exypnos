@@ -3,12 +3,34 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import * as ContextMenu from '@radix-ui/react-context-menu';
 import Button from './Button';
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithCredential, GoogleAuthProvider, User } from 'firebase/auth';
 import { ChevronRight, EllipsisVertical, FolderPlus, Search } from '../icons';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAaVm_kCmmP_j37RhUN_nSd5zArhIFzehU',
+  authDomain: 'exypnos-2724c.firebaseapp.com',
+  projectId: 'exypnos-2724c',
+  storageBucket: 'exypnos-2724c.appspot.com',
+  messagingSenderId: '365608379894',
+  appId: '1:365608379894:web:ad387fbe81bc6b3529d3d7',
+  measurementId: 'G-YNX5DTSBE6',
+};
+
+// Initialize Firebase
+const firebase = initializeApp(firebaseConfig);
+const auth = getAuth(firebase);
 
 export const SIDEBAR_WIDTH = 320;
 
 export default function Panel({ initialEnabled, tabs }: { initialEnabled: boolean; tabs: any[] }): ReactElement {
-  const [enabled, setEnabled] = useState(initialEnabled);
+  const [user, setUser] = React.useState<User | undefined>(undefined);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setUser(user && user.uid ? user : undefined);
+    });
+  }, []);
 
   useEffect(() => {
     console.log('tabList', tabs);
@@ -120,8 +142,22 @@ export default function Panel({ initialEnabled, tabs }: { initialEnabled: boolea
         <ScrollArea.Corner className="bg-blackA8" />
       </ScrollArea.Root>
       <div className="p-4 flex items-center justify-between w-full">
-        <Button size="sm" className="px-0 text-gray-200">
-          Log in
+        <Button
+          onClick={async () => {
+            if (!user) {
+              await window['chrome'].runtime.sendMessage({
+                api: 'firebase',
+                type: 'login',
+                auth,
+                GoogleAuthProvider,
+                signInWithCredential,
+              });
+            }
+          }}
+          size="sm"
+          className="px-0 text-gray-200"
+        >
+          {user ? <div className="rounded-full w-6 aspect-square bg-purple-300"></div> : <div>Log in</div>}
         </Button>
         <Button className="p-0 text-gray-200">
           <EllipsisVertical />
